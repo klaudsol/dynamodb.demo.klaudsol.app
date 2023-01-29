@@ -6,6 +6,8 @@ frontend:
         - yarn install
     build:
       commands:
+        - env | grep -e KS_ >> .env.production
+        - env | grep -e NEXT_PUBLIC_ >> .env.production
         - yarn run build
   artifacts:
     baseDirectory: .next
